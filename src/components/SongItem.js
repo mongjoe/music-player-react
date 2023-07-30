@@ -26,17 +26,17 @@ const SongItem = ({ song, index, selectSong, selectedSongId, playerState }) => {
         );
     };
 
-    // Set song as active
+    // Đăt sẵn 1 bài hát đang hoạt động
     const now_selected = selectedSongId === song.id ? "active" : "";
 
-    // set the gif
+    // Đặt biểu tượng đang chơi nhạc
     const phaser = () => {
         if (selectedSongId === song.id && playerState) {
             return (
                 <div className="index">
                     <img
                         alt=""
-                        src="/playing.gif"
+                        src="/sound.png"
                         id="focused"
                         className="small-icon"
                     />
@@ -60,7 +60,7 @@ const SongItem = ({ song, index, selectSong, selectedSongId, playerState }) => {
             {phaser()}
             <div className="name">{song.name}</div>
             <div className="author">{song.author}</div>
-            <div className="selector">{selector()}</div>
+
         </div>
     );
 };
